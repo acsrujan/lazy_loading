@@ -9,6 +9,18 @@ angular.module("snowwhirl", [])
             return input;
         }
     })
+    .filter('array', function() {
+    return function(arrayLength) {
+        if (arrayLength) {
+            arrayLength = Math.ceil(arrayLength);
+            var arr = new Array(arrayLength), i = 0;
+            for (; i < arrayLength; i++) {
+                arr[i] = i;
+            }
+            return arr;
+        }
+      }
+    })
     .factory('instagram', ['$http',
         function($http) {
             return {
@@ -36,5 +48,5 @@ angular.module("snowwhirl", [])
             }
         });
       };
-      $scope.getMore();
-    });
+      $scope.getMore();    
+});

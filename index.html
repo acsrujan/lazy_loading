@@ -8,30 +8,27 @@
 
 <div ng-app="snowwhirl" ng-controller="insta">
     <div class="container">
+      <center><h1>Snow Whirl</h1></center>
+
       <div class="row">
         <div class="col-md-12">
-          <h2>Showing popular Instagram pics
-          </h2>
+          <h2>Showing popular Instagram pics</h2>
         </div>
       </div>
-        <div class="row">
-    <div ng-repeat="p in pics | orderBy:orderBy" class="col-md-2">
-      <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}">
-     
-      </a>
-<span class="glyphicon" style="glyphicon-heart"> {{p.likes.count}}</span>      
-        </div>
     </div>
-     <button type="button" class="btn btn-success" ng-click="getMore()">
-              Click to see more
-              <!-- <div hid>{{pics.length}}</div> -->
-            </button>
-</div>
+    
+    <div ng-repeat="p in pics | orderBy:orderBy" class="col-md-2">
+      <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="img-responsive thumbnail" title="{{p.caption.text}}"></a>
+    </div>
 
+  <center>
+  <button type="button" class="btn btn-success" ng-click="getMore()">Click to See More
+  </button>
+  </center>
+
+</div>
 
 <script src="app.js"></script>
 </body>
 
-
-</style>
 </html>
