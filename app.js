@@ -1,5 +1,6 @@
-angular.module("snowwhirl", [])
-    .filter('fromTo', function() {
+var whirl = angular.module("snowwhirl", [])
+
+whirl.filter('fromTo', function() {
         return function(input, from, total, lessThan) {
             from = parseInt(from);
             total = parseInt(total);
@@ -9,7 +10,7 @@ angular.module("snowwhirl", [])
             return input;
         }
     })
-    .filter('array', function() {
+whirl.filter('array', function() {
     return function(arrayLength) {
         if (arrayLength) {
             arrayLength = Math.ceil(arrayLength);
@@ -21,7 +22,7 @@ angular.module("snowwhirl", [])
         }
       }
     })
-    .factory('instagram', ['$http',
+whirl.factory('instagram', ['$http',
         function($http) {
             return {
                 fetchPopular: function(callback) {
@@ -34,7 +35,7 @@ angular.module("snowwhirl", [])
             }
         }
     ])
-    .controller("insta", function($scope, $interval, instagram) {
+whirl.controller("insta", function($scope, $interval, instagram) {
       $scope.pics = [];
       $scope.have = [];
       $scope.orderBy = "-likes.count";
@@ -48,5 +49,16 @@ angular.module("snowwhirl", [])
             }
         });
       };
-      $scope.getMore();    
+      
+    $scope.layout = 'grid';
+    
+    $scope.setLayout = function(layout){
+        $scope.layout = layout;
+    };
+    
+    $scope.isLayout = function(layout){
+        return $scope.layout == layout;
+    };
+
+      $scope.getMore();
 });
