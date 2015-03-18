@@ -109,3 +109,55 @@ ul.grid li img{
   display:block;
   border:none;
 }
+
+li{
+  display:block;
+  list-style-type:none;
+  margin-bottom: 1em;
+}
+
+
+ul{
+  height:250px;
+  background: #44E394;
+  color: #fff;
+  overflow:auto;
+  width:550px;
+  border-radius: 5px;
+  margin:0 auto;
+  padding: 0.5em;
+  border: 1px dashed #11BD6D;
+  &::-webkit-scrollbar{
+    width:8px;
+    background-color:transparent;
+  };
+  &::-webkit-scrollbar-thumb{
+    background-color:#b0fccd;
+    border-radius:10px;
+  }
+  &::-moz-scrollbar{
+    width:8px;
+    background-color:transparent;
+  };
+  &::-moz-scrollbar-thumb{
+    background-color:#b0fccd;
+    border-radius:10px;
+  }
+  &::-ms-scrollbar{
+    width:8px;
+    background-color:transparent;
+  };
+  &::-ms-scrollbar-thumb{
+    background-color:#b0fccd;
+    border-radius:10px;
+  }
+}
+
+body{
+  text-align:center;
+  font-size:1.2em;
+  font-family: "Helvetica";
+  color: #44E394;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAG0lEQVQIW2P88OHDfwY0wAgSFBAQYEQWp1AQAKUbE9XRpv7GAAAAAElFTkSuQmCC) repeat;
+  padding: 2em;
+}
